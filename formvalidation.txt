@@ -1,0 +1,161 @@
+save this file as formvalidation.js
+
+
+//form validation starts
+
+//name validation starts
+function nameValidate(){
+    let name=document.getElementById('name').value
+    if(name==""){
+        displayMsg('name is mandatory','nameMsg','red')
+        return false
+    }
+    else if(!name.match(/^([a-zA-Z])+$/)){
+        displayMsg('name cannot contain number','nameMsg','red')
+        return false
+    }
+    else if(name.length<3){
+        displayMsg('name must be more than 2 characters','nameMsg','red')
+        return false
+    }
+    else{
+        displayMsg('valid name','nameMsg','green')
+        return true
+    }
+}
+//first name validation ends
+
+//subject validation starts
+function subjectValidate(){
+    let subject=document.getElementById('subject').value
+    if(subject==""){
+        displayMsg('subject is mandatory','subjectMsg','red')
+        return false
+    }
+    
+    else if(subject.length<3){
+        displayMsg('subject must be more than 2 characters','subjectMsg','red')
+        return false
+    }
+    else{
+        displayMsg('valid subject','subjectMsg','green')
+        return true
+    }
+}
+//subject validation ends
+
+
+
+
+
+
+// email validation
+
+// function emailValidate(){
+//     let email=document.getElementById('email').value
+//     if(email==""){
+//         displayMsg('email is mandatory','emailMsg','red')
+//         return false
+//     }
+//   else{
+//         displayMsg('valid email','emailMsg','green')
+//         return true
+//     }
+// }
+
+
+
+// //email validation starts
+
+function emailValidate(){
+    let email=document.getElementById('email').value
+    let position=email.search("@gmail.com")
+    if(email==""){
+        displayMsg('email is mandatory','emailMsg','red')
+        return false
+    }
+    else if(position<0){
+        displayMsg('email must be in format someone@gmail.com','emailMsg','red')
+        return false
+    }
+    else{
+        displayMsg('valid email','emailMsg','green')
+        return true
+    }
+}
+//email validation ends
+
+// yourmsg validation
+
+
+function yourmsgValidate(){
+    let yourmsg=document.getElementById('yourmsg').value
+    if(yourmsg==""){
+        displayMsg('yourmsg is mandatory','yourmsgMsg','red')
+    }
+    else if(yourmsg.length<3){
+        displayMsg('your msg doesnt have meaning','yourmsgMsg','red')
+        return false
+    }
+    else{
+        displayMsg('you have a valid message','yourmsgMsg','green')
+        return true
+    }
+}
+
+//main function starts
+
+function displayMsg(msg,id,colorvalue){
+    document.getElementById(id).innerHTML=msg
+    document.getElementById(id).style.color=colorvalue
+}
+//main function ends
+
+
+// submit function
+function validForm(){
+
+
+if(nameValidate() && subjectValidate() && emailValidate() && yourmsgValidate()){
+    return true
+}
+else{
+    return false
+}
+}
+
+
+// if (validForm()){
+//     document.getElementById('btnsubmit').disabled = false;
+// }
+// else{
+//     document.getElementById('btnsubmit').disabled = true;
+// }
+function sendEmail() {
+   
+    let yourmsg=document.getElementById('yourmsg').value
+    let subject=document.getElementById('subject').value
+    let email=document.getElementById('email').value
+    if(validForm()){
+	window.open('mailto:viperkailash@gmail.com?&mailfrom='+email+'&subject='+subject+'&body='+yourmsg+'');
+    }
+else{
+    displayMsg('Some fields are empty','resultMsg','red')
+}
+}
+// VaiperKailash@2022$emailjs
+
+// function sendmail() {
+//     let fullName = document.getElementById("name").value;
+//     let userEmail = document.getElementById("email").value;
+//     let userMessage = document.getElementById("subject").value;
+// let usersubject=document.getElementById("subject").value;
+//         var contactParams = {
+//             from_name: fullName,
+//             from_email: userEmail,
+//             subject:usersubject,
+//             message: userMessage
+//         };
+
+//         emailjs.send('service_XXXX', 'template_XXXXX', contactParams).then(function (res) {})
+// }

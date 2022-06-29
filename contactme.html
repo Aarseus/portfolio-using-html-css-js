@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>contact me</title>
+    <link rel="shortcut icon" href="images/pp3.jpg" type="icon">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="index.html">Portfo<span>lio.</span></a></div>
+            <ul class="menu">
+                <li><a href="index.html" class="menu-btn">Home</a></li>
+                <li><a href="about.html" class="menu-btn">About</a></li>
+                <li><a href="skills.html" class="menu-btn">Skills</a></li>
+                <li><a href="blog.html" class="menu-btn">Blog</a></li>
+                <li><a href="hobby.html" class="menu-btn">Hobby</a></li>
+                <li><a href="projects.html" class="menu-btn">Projects</a></li>
+                <li><a href="contactme.html" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars" style="color: #92B4EC;"></i>
+            </div>
+        </div>
+    </nav>
+
+   <!-- contact section start -->
+   <section class="contact" id="contact">
+    <div class="max-width">
+        
+        <h2 class="title">Contact me</h2>
+        <div class="contact-content">
+            <div class="column left">
+                <div class="text">Get in Touch</div>
+                <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p> -->
+                <div class="icons">
+                    <div class="row">
+                        <i class="fas fa-user"></i>
+                        <div class="info">
+                            <div class="head">Name</div>
+                            <div class="sub-title">Dipendra K Bista</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info">
+                            <div class="head">Address</div>
+                            <div class="sub-title">Kadaghari,Kathmandu</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <div class="head">Email</div>
+                            <div class="sub-title">trojanbista@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column right">
+                <div class="text">Message me</div>
+                <form onsubmit="return validForm()">
+                    <div class="fields">
+                        <div class="field name">
+                            <input id="name" type="text" placeholder="Name" class="name" onkeyup="nameValidate()" >
+                            
+
+                        </div>
+                        <span id="nameMsg"></span>
+                        <div class="field email">
+                            <input id="email" type="email" placeholder="Email" class="email" onkeyup="emailValidate()">
+                           
+
+                        </div>
+                        <span id="emailMsg"></span>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="subject" placeholder="Subject" class="subject" onkeyup="subjectValidate()">
+                  
+
+                    </div>
+                    <span id="subjectMsg"></span>
+                    <div class="field textarea">
+                        <textarea id="yourmsg" cols="30" rows="10" placeholder="Message.." class="yourmsg" onkeyup="yourmsgValidate()"></textarea>
+                       
+
+                    </div>
+                    <span id="yourmsgMsg"></span>
+                    <div class="button-area">
+                        <button id="btnsubmit" type="submit" onclick="sendEmail()">Send message</button>
+                    </div>
+                    <span id="resultMsg"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="formvalidation.js"></script>
+</body>
+
+</html>
